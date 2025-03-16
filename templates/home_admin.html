@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Home</title>
+</head>
+<body>
+    <h1>Welcome Admin</h1>
+    <ul>
+        <li><a href="{{ url_for('add_member_page') }}">Add Member</a></li>
+        <li><a href="{{ url_for('add_trainer_page') }}">Add Trainer</a></li>
+        <li><a href="{{ url_for('add_schedule_page') }}">Add Schedule</a></li>
+        <li><a href="{{ url_for('view_members_page') }}">View Members</a></li>
+        <li><a href="{{ url_for('view_trainers_page') }}">View Trainers</a></li>
+        <li><a href="{{ url_for('view_schedules_page') }}">View Schedules</a></li>
+        <li><a href="{{ url_for('delete_member_page') }}">Delete Member</a></li>
+        <li><a href="{{ url_for('delete_trainer_page') }}">Delete Trainer</a></li>
+        <li><a href="{{ url_for('delete_schedule_page') }}">Delete Schedule</a></li>
+    </ul>
+    <br>
+    <a href="{{ url_for('login') }}">Logout</a>
+</body>
+</html>

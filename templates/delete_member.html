@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Delete Member</title>
+</head>
+<body>
+    <h1>Delete Member</h1>
+    <form action="{{ url_for('delete_member') }}" method="post">
+        <label for="id">Member ID:</label>
+        <input type="text" id="id" name="id" required>
+        <br><br>
+        <button type="submit">Delete Member</button>
+    </form>
+    <p>{{ success }}</p>
+    <br>
+    <a href="{{ url_for('home_admin') }}">Back to Home</a>
+</body>
+</html>

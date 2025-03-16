@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>View Trainers</title>
+</head>
+<body>
+    <h1>View Trainers</h1>
+    <table border="1">
+        <tr>
+            {% for col in cols %}
+                <th>{{ col }}</th>
+            {% endfor %}
+        </tr>
+        {% for item in items %}
+            <tr>
+                {% for col in cols %}
+                    <td>{{ item[col] }}</td>
+                {% endfor %}
+            </tr>
+        {% endfor %}
+    </table>
+    <p>{{ success }}</p>
+    <br>
+    <a href="{{ url_for('home_admin') }}">Back to Home</a>
+</body>
+</html>
