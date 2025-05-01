@@ -1,0 +1,66 @@
+{% extends 'base.html' %}
+
+{% block title %}Update Class{% endblock %}
+
+{% block content %}
+<div class="container mt-4">
+    <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="{{ url_for('trainer_classes') }}">My Classes</a></li>
+            <li class="breadcrumb-item"><a href="{{ url_for('trainer_class_detail', class_id=gym_class.id) }}">{{ gym_class.name }}</a></li>
+            <li class="breadcrumb-item active" aria-current="page">Update</li>
+        </ol>
+    </nav>
+
+    <div class="card">
+        <div class="card-header">
+            <h2>Update Class Details</h2>
+        </div>
+        <div class="card-body">
+            <form method="POST">
+                <div class="mb-3">
+                    <label for="name" class="form-label">Class Name</label>
+                    <input type="text" class="form-control" id="name" name="name" value="{{ gym_class.name }}" required>
+                </div>
+                
+                <div class="mb-3">
+                    <label for="description" class="form-label">Description</label>
+                    <textarea class="form-control" id="description" name="description" rows="3" required>{{ gym_class.description }}</textarea>
+                </div>
+                
+                <div class="mb-3">
+                    <label for="schedule_day" class="form-label">Day of Week</label>
+                    <select class="form-select" id="schedule_day" name="schedule_day" required>
+                        <option value="Monday" {% if gym_class.schedule_day == 'Monday' %}selected{% endif %}>Monday</option>
+                        <option value="Tuesday" {% if gym_class.schedule_day == 'Tuesday' %}selected{% endif %}>Tuesday</option>
+                        <option value="Wednesday" {% if gym_class.schedule_day == 'Wednesday' %}selected{% endif %}>Wednesday</option>
+                        <option value="Thursday" {% if gym_class.schedule_day == 'Thursday' %}selected{% endif %}>Thursday</option>
+                        <option value="Friday" {% if gym_class.schedule_day == 'Friday' %}selected{% endif %}>Friday</option>
+                        <option value="Saturday" {% if gym_class.schedule_day == 'Saturday' %}selected{% endif %}>Saturday</option>
+                        <option value="Sunday" {% if gym_class.schedule_day == 'Sunday' %}selected{% endif %}>Sunday</option>
+                    </select>
+                </div>
+                
+                <div class="row">
+                    <div class="col-md-6 mb-3">
+                        <label for="start_time" class="form-label">Start Time</label>
+                        <input type="time" class="form-control" id="start_time" name="start_time" 
+                               value="{{ gym_class.start_time.strftime('%H:%M') }}" required>
+                    </div>
+                    
+                    <div class="col-md-6 mb-3">
+                        <label for="end_time" class="form-label">End Time</label>
+                        <input type="time" class="form-control" id="end_time" name="end_time" 
+                               value="{{ gym_class.end_time.strftime('%H:%M') }}" required>
+                    </div>
+                </div>
+                
+                <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+                    <a href="{{ url_for('trainer_class_detail', class_id=gym_class.id) }}" class="btn btn-secondary me-md-2">Cancel</a>
+                    <button type="submit" class="btn btn-primary">Update Class</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock %}

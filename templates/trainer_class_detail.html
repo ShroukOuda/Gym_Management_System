@@ -1,0 +1,79 @@
+{% extends 'base.html' %}
+
+{% block title %}Class Details - {{ gym_class.name }}{% endblock %}
+
+{% block content %}
+<div class="container mt-4">
+    <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="{{ url_for('trainer_classes') }}">My Classes</a></li>
+            <li class="breadcrumb-item active" aria-current="page">{{ gym_class.name }}</li>
+        </ol>
+    </nav>
+
+    {% with messages = get_flashed_messages(with_categories=true) %}
+        {% if messages %}
+            {% for category, message in messages %}
+                <div class="alert alert-{{ category }} alert-dismissible fade show" role="alert">
+                    {{ message }}
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                </div>
+            {% endfor %}
+        {% endif %}
+    {% endwith %}
+
+    <div class="card mb-4">
+        <div class="card-header d-flex justify-content-between align-items-center">
+            <h2>{{ gym_class.name }}</h2>
+            <a href="{{ url_for('update_class_details', class_id=gym_class.id) }}" class="btn btn-primary">Update Class</a>
+        </div>
+        <div class="card-body">
+            <div class="row">
+                <div class="col-md-6">
+                    <p><strong>Day:</strong> {{ gym_class.schedule_day }}</p>
+                    <p><strong>Time:</strong> {{ gym_class.start_time.strftime('%I:%M %p') }} - {{ gym_class.end_time.strftime('%I:%M %p') }}</p>
+                    <p><strong>Capacity:</strong> {{ gym_class.capacity }}</p>
+                </div>
+                <div class="col-md-6">
+                    <p><strong>Description:</strong></p>
+                    <p>{{ gym_class.description }}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="card">
+        <div class="card-header">
+            <h3>Enrolled Members ({{ enrolled_members|length }}/{{ gym_class.capacity }})</h3>
+        </div>
+        <div class="card-body">
+            {% if enrolled_members %}
+                <div class="table-responsive">
+                    <table class="table table-striped">
+                        <thead>
+                            <tr>
+                                <th>Member Name</th>
+                                <th>Contact Number</th>
+                                <th>Email</th>
+                                <th>Enrollment Date</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for item in enrolled_members %}
+                                <tr>
+                                    <td>{{ item.member.first_name }} {{ item.member.last_name }}</td>
+                                    <td>{{ item.member.phone }}</td>
+                                    <td>{{ item.member.user.email }}</td>
+                                    <td>{{ item.enrollment_date.strftime('%Y-%m-%d') }}</td>
+                                </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+            {% else %}
+                <div class="alert alert-info">No members have enrolled in this class yet.</div>
+            {% endif %}
+        </div>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+
+{% block title %}My Classes{% endblock %}
+
+{% block content %}
+<div class="container mt-4">
+    <h1>My Classes</h1>
+    <p>Welcome, {{ trainer.first_name }} {{ trainer.last_name }}</p>
+
+    {% with messages = get_flashed_messages(with_categories=true) %}
+        {% if messages %}
+            {% for category, message in messages %}
+                <div class="alert alert-{{ category }} alert-dismissible fade show" role="alert">
+                    {{ message }}
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                </div>
+            {% endfor %}
+        {% endif %}
+    {% endwith %}
+
+    {% if classes %}
+        <div class="row">
+            {% for class in classes %}
+                <div class="col-md-4 mb-4">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">{{ class.name }}</h5>
+                            <h6 class="card-subtitle mb-2 text-muted">{{ class.schedule_day }} 
+                                {{ class.start_time.strftime('%I:%M %p') }} - {{ class.end_time.strftime('%I:%M %p') }}</h6>
+                            <p class="card-text">{{ class.description }}</p>
+                            <p><strong>Capacity:</strong> {{ class.capacity }}</p>
+                            <a href="{{ url_for('trainer_class_detail', class_id=class.id) }}" class="btn btn-primary">View Details</a>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    {% else %}
+        <div class="alert alert-info">
+            You don't have any classes assigned yet.
+        </div>
+    {% endif %}
+</div>
+{% endblock %}

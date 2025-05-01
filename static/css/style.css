@@ -1,0 +1,652 @@
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  font-family: "Nunito", sans-serif;
+}
+
+body {
+    background-color: #f8f9fa;
+    overflow-x: hidden;
+}
+
+.navbar {
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+    background-color: rgba(251, 207, 119, 0.4);
+}
+.navbar-brand {
+    font-weight: bold;
+    font-size: 1.5rem;
+}
+.main-title{
+    font-weight: bold;
+}
+.home{
+    width:100% ;
+    height: 100vh;
+    background-image: url(../images/e40f4aab-e0a1-4580-9298-cdd22739ac65.avif);
+    background-size: cover;
+    margin-top: -20px;
+}
+.home-overlay{
+width: 100%;
+height: 100%;
+left: 0;
+background-color: rgba(0, 0, 0,.5);
+}
+.home-content{
+    width: 100%;
+    max-width: 800px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+.home-p{
+    color: rgb(179, 179, 179);
+    font-size: 1rem;
+}
+.check {
+    color: rgb(53, 53, 254);
+}
+ .section::after,.section::before {
+  content: "";
+  background: url(../img/blur-1.png);
+  position: absolute;
+  width: 400px;
+  height: 400px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  bottom: 0;
+}
+.flex {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+} 
+.mb {
+    margin-bottom: 30px;
+}
+.mt {
+    margin-top: 20px;
+}
+.secondary1{
+    margin-top: 38px;
+}
+.section::after {
+    left: -200px;
+}
+.section::before {
+    width: 600px;
+    right: -200px;
+}
+.primary {
+    font-size: 2.2rem;
+    font-weight: bold;
+}
+.secondary {
+    font-size: 25px;
+    font-weight: 700;
+   
+   color: #1a1a1a;
+}
+.tertiary {
+    font-size: 18px;
+    color: #666666;
+    margin-left: 15px;
+}
+.text {
+    width: 72%;
+}
+.visual {
+    width: 28%;
+ 
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+   
+}
+.visual1{
+    background-image: url("../images/msid-91740413\,width-900\,height-1200\,resizemode-6.cms");
+    height: 520px; 
+
+}
+@media (max-width: 768px) {
+    .flex {
+      flex-direction: column;
+      text-align: center;
+    }
+    .text,
+    .visual {
+      width: 100%;
+    }
+    .primary {
+      font-size: 28px;
+    }
+  
+    .secondary {
+      font-size: 22px;
+    }
+  
+    .tertiary {
+      font-size: 14px;
+    }
+}  
+
+@media (max-width: 530px) {
+    .section::after,
+    .section::before {
+      display: none;
+    }
+  
+    .primary {
+      font-size: 25px;
+    }
+  
+    .secondary {
+      font-size: 20px;
+    }
+  
+    .tertiary {
+      font-size: 12px;
+    } 
+  }
+.section {
+        background: #ffffff;
+        position: relative;
+        padding: 80px 0;
+}
+section {
+    padding-top: 60px;
+    padding-left: 130px;  
+    padding-right: 130px;  
+}
+h2 {
+    text-align: center;
+    font-size: clamp(1.8rem, 4vw, 2.5rem);
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+.why_line {
+    width: 10vw;
+    max-width: 90px;
+    height: 4px;
+    background-color: rgb(53, 53, 254);
+    margin: 0 auto 30px auto;
+}
+.card-title {
+    color: #1a1a1a;
+    font-weight: 700;
+}
+.card-text {
+    color: #666666;
+    font-size: 18px;
+}
+.card {
+    box-shadow: 0 0.25rem 0.75rem rgba(0, 0, 0, 0.35);
+    margin-bottom: 1.5rem;
+    border: none;
+    border-radius: 8px;
+    transition: transform 0.2s ease-in-out;
+    /* height: 190px;  */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; 
+}
+.card1{
+  height: 190px;  
+}
+.card:hover {
+    transform: translateY(-5px);
+}
+.row {
+    margin-left: -15px;
+    margin-right: -15px;
+}
+.col-md-4 {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+@media (max-width: 768px) {
+    section {
+        padding-left: 30px;
+        padding-right: 30px;
+    }
+    .col-md-4 {
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+    .card{
+        height: 200px; 
+    }
+}
+  .trainer_section {
+    width: 100%;
+    padding: 40px 20px;
+  }
+  
+  .trainer_card {
+    display: flex;
+    flex-wrap: nowrap;
+    min-height: 500px;
+    border-radius: 15px;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.35);
+    overflow: hidden;
+    align-items: stretch;
+    background-color: #fff;
+  }
+  
+  .trainer_info {
+    width: 70%;
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  
+  .trainer_title {
+    font-size: 2rem;
+    font-weight: bold;
+    
+    color:#1a1a1a ;
+    margin-bottom: 10px;
+    text-transform: capitalize;
+  }
+  
+  .trainer_meta {
+    font-size: 14px;
+    color: #666666;
+  }
+  
+  .trainer_line {
+    width: 80px;
+    height: 3px;
+    
+    border-radius: 5px;
+    transition: width 0.5s;
+  }
+  .tranierline1{
+    background-color: #007bff;
+  }
+  .tranierline2{
+    background-color: #d77aff;
+  }
+  .trainer_card:hover .trainer_line {
+    width: 130px;
+  }
+  
+  .trainer_text {
+    font-size: 16px;
+    color: #555;
+    line-height: 1.6;
+    margin-top: 10px;
+  }  
+/*   
+  .trainer-btn {
+    display: inline-block;
+    width: auto;
+    padding: 10px 24px;
+    font-size: 16px;
+    font-weight: 600;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+  }
+  
+  .trainer-btn:hover {
+    background-color: #0056b3;
+    transform: translateY(-2px);
+    color: #fff;
+  } */
+  .trainer-btn {
+    background-color: #ccc; /* رمادي */
+    color: black;
+    padding: 10px 24px;
+    font-size: 16px;
+    font-weight: 600;
+    border: none;
+    border-radius: 8px;
+    transition: background-color 0.5s ease; /* زمن التحول */
+  }
+  
+  .trainer-btn:hover,
+  .trainer-btn:active,
+  .trainer-btn:focus {
+    /* background-color: #007bff; */
+    color: white;
+  }
+  .trainer-btn2:hover,
+  .trainer-btn2:active,
+  .trainer-btn2:focus {
+    background-color: #d77aff; /* أزرق */
+    /* color: #fff; */
+  }
+  .trainer-btn1:hover,
+  .trainer-btn1:active,
+  .trainer-btn1:focus{
+    background-color: #007bff; 
+  }
+  .trainer_image {
+    width: 30%;
+    min-height: 500px;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    border-radius: 0;
+  }
+  
+  .tranierimg1 {
+    background-image: url(../images/concentrated-mature-man-riding-stationary-bike-when-trainer-writing-results-document_274689-19085.avif);
+  }
+  .tranierimg2{
+    background-image: url(../images/OIP.jpeg);
+  }
+  /* ✅ Responsive */
+  @media (max-width: 768px) {
+    .trainer_card {
+      flex-direction: column;
+    }
+  
+    .trainer_info,
+    .trainer_image {
+      width: 100%;
+      text-align: center;
+      padding: 20px;
+    }
+  
+  .trainer_image {
+    height: 300px; 
+    background-size: cover;
+    background-position: center center;
+  }
+
+  
+    .trainer_title {
+      font-size: 1.6rem;
+    }
+  
+    .trainer_text {
+      font-size: 15px;
+    }
+  
+    .trainer_line {
+      margin: 10px auto;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .trainer_title {
+      font-size: 1.4rem;
+    }
+  
+    .trainer_text {
+      font-size: 14px;
+    }
+  
+    .trainer_image {
+      height: 500px;
+    }
+  }
+  section {
+    background-color: #fff; /* أو white */
+  }
+  .numbers {
+    width: 100%;
+    height: 50vh;
+    background-image: url(../images/OIP\ \(2\).jpeg);
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    color: #fff;
+    text-align: center;
+  }
+  
+  .numbers_content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 40px;
+    width: 85%;
+    max-width: 1200px;
+  }
+  
+  .numbers_item {
+    flex: 1 1 180px;
+    max-width: 220px;
+  }
+  
+  .numbers_icon {
+    font-size: 40px;
+    color: rgb(235, 181, 82);
+  }
+  
+  .numbers_title {
+    font-size: 2rem;
+    margin: 10px 0 5px;
+  }
+  
+  .numbers_p {
+    font-size: 1rem;
+  }
+  
+  /* ✅ Responsive adjustments */
+  @media (max-width: 768px) {
+    .numbers {
+      height: auto;
+      padding: 60px 20px;
+    }
+  
+    .numbers_content {
+      flex-direction: column;
+      align-items: center;
+      gap: 30px;
+    }
+  
+    .numbers_item {
+      max-width: 100%;
+    }
+  
+    .numbers_title {
+      font-size: 1.5rem;
+    }
+  
+    .numbers_icon {
+      font-size: 36px;
+    }
+  }
+  
+  
+/* /////// */
+
+.visual {
+    /* width: 40%; */
+  }
+  
+  .visual img {
+    width: 100%;
+  }
+  
+.client {
+    background: #fff;
+    color: #000;
+    padding: 20px 10px;
+    margin-right: 20px;
+    text-align: center;
+    border-radius: 20px;
+    position: relative;
+    margin-top: 20px;
+  }
+  
+  .client img {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    position: absolute;
+    top: -40px;
+    left: calc(50% - 40px);
+  }
+  
+  .client h2 {
+    margin: 20px 0 10px 0;
+  }
+  @media (max-width: 768px) {
+
+    .text,
+    .visual {
+      width: 100%;
+    }
+    
+  .client {
+    margin-bottom: 50px;
+  }}
+  .section_clients,.section_why{
+    background-color: rgb(240, 240, 240);
+  }
+ .visual1 img {
+    height: 520px; 
+    /* height: 530px; */
+
+   
+  } 
+/* ///// */
+.btn-primary {
+    background-color: #0d6efd;
+    border: none;
+}
+
+.btn-primary:hover {
+    background-color: #0b5ed7;
+    opacity: .5;
+}
+
+footer {
+    margin-top: 3rem;
+    padding: 1.5rem 0;
+}
+
+/* Dashboard stats */
+.stats-card {
+    color: #fff;
+    border-radius: 8px;
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+.stats-card.members {
+    background: linear-gradient(45deg, #4e73df 0%, #224abe 100%);
+}
+
+.stats-card.classes {
+    background: linear-gradient(45deg, #1cc88a 0%, #13855c 100%);
+}
+
+.stats-card.trainers {
+    background: linear-gradient(45deg, #36b9cc 0%, #258391 100%);
+}
+
+.stats-card.revenue {
+    background: linear-gradient(45deg, #f6c23e 0%, #dda20a 100%);
+}
+
+.stats-card i {
+    font-size: 2rem;
+    opacity: 0.4;
+}
+
+.stats-card .count {
+    font-size: 2rem;
+    font-weight: 700;
+}
+
+.stats-card .label {
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    margin-bottom: 0;
+}
+
+/* Form styling */
+.form-label {
+    font-weight: 500;
+}
+
+.form-control:focus {
+    border-color: #0d6efd;
+    box-shadow: 0 0 0 0.25rem rgba(13, 110, 253, 0.25);
+}
+
+/* Table styling */
+.table th {
+    font-weight: 600;
+    background-color: #f8f9fa;
+}
+
+/* Profile page */
+.profile-header {
+    background-color: #ffffff;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.05);
+    margin-bottom: 2rem;
+}
+
+.profile-img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 5px solid #fff;
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
+}
+
+/* Alert styling */
+.alert {
+    border-radius: 8px;
+    border: none;
+}
+
+/* Login page */
+.login-container {
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+/* Calendar */
+.calendar {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.calendar th, .calendar td {
+    padding: 10px;
+    text-align: center;
+    border: 1px solid #dee2e6;
+}
+
+.calendar .today {
+    background-color: #e2f0ff;
+    font-weight: bold;
+}
+
+.calendar .has-class {
+    background-color: #d1e7dd;
+}
+
+/* Responsive adjustments */
+@media (max-width: 767px) {
+    .jumbotron {
+        padding: 2rem;
+    }
+    
+    .stats-card .count {
+        font-size: 1.5rem;
+    }
+}

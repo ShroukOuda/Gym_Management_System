@@ -1,0 +1,64 @@
+{% extends 'base.html' %}
+
+{% block title %}Member Dashboard - Gym Management System{% endblock %}
+
+{% block content %}
+<h1>Member Dashboard</h1>
+<p>Welcome, {{ user.username }}!</p>
+
+<div class="row mt-4">
+    <div class="col-md-6">
+        <div class="card">
+            <div class="card-header">Your Membership</div>
+            <div class="card-body">
+                <h5>{{ member.first_name }} {{ member.last_name }}</h5>
+                <p><strong>Membership Type:</strong> {{ member.membership_type }}</p>
+                <p><strong>Start Date:</strong> {{ member.membership_start.strftime('%Y-%m-%d') }}</p>
+                <p><strong>End Date:</strong> {{ member.membership_end.strftime('%Y-%m-%d') }}</p>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-6">
+        <div class="card">
+            <div class="card-header">Quick Links</div>
+            <div class="card-body">
+                <a href="{{ url_for('classes_list') }}" class="btn btn-primary mb-2">View Classes</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row mt-4">
+    <div class="col-md-12">
+        <div class="card">
+            <div class="card-header">Your Classes</div>
+            <div class="card-body">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>Class Name</th>
+                            <th>Day</th>
+                            <th>Time</th>
+                            <th>Trainer</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for enrollment in member.enrollments %}
+                            <tr>
+                                <td>{{ enrollment.gym_class.name }}</td>
+                                <td>{{ enrollment.gym_class.schedule_day }}</td>
+                                <td>{{ enrollment.gym_class.start_time.strftime('%H:%M') }} - {{ enrollment.gym_class.end_time.strftime('%H:%M') }}</td>
+                                <td>{{ enrollment.gym_class.trainer.first_name }} {{ enrollment.gym_class.trainer.last_name }}</td>
+                            </tr>
+                        {% else %}
+                            <tr>
+                                <td colspan="4" class="text-center">You are not enrolled in any classes yet.</td>
+                            </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

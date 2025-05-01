@@ -1,0 +1,64 @@
+{% extends 'base.html' %}
+
+{% block title %}Attendance - Gym Management System{% endblock %}
+
+{% block content %}
+<h1>Attendance Management</h1>
+
+<div class="row mt-4">
+    <div class="col-md-6">
+        <div class="card">
+            <div class="card-header">Check-in / Check-out</div>
+            <div class="card-body">
+                <form method="POST">
+                    <div class="mb-3">
+                        <label for="member_id" class="form-label">Member</label>
+                        <select class="form-control" id="member_id" name="member_id" required>
+                            {% for member in members %}
+                                <option value="{{ member.id }}">{{ member.first_name }} {{ member.last_name }}</option>
+                            {% endfor %}
+                        </select>
+                    </div>
+                    <div class="mb-3">
+                        <label for="attendance_type" class="form-label">Action</label>
+                        <select class="form-control" id="attendance_type" name="attendance_type" required>
+                            <option value="check_in">Check-in</option>
+                            <option value="check_out">Check-out</option>
+                        </select>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                </form>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-6">
+        <div class="card">
+            <div class="card-header">Today's Attendance</div>
+            <div class="card-body">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>Member</th>
+                            <th>Check-in</th>
+                            <th>Check-out</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for attendance in attendances %}
+                            <tr>
+                                <td>{{ attendance.member.first_name }} {{ attendance.member.last_name }}</td>
+                                <td>{{ attendance.check_in.strftime('%H:%M') }}</td>
+                                <td>{{ attendance.check_out.strftime('%H:%M') if attendance.check_out else 'Active' }}</td>
+                            </tr>
+                        {% else %}
+                            <tr>
+                                <td colspan="3" class="text-center">No attendance records for today.</td>
+                            </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
