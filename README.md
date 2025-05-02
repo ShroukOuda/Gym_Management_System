@@ -49,7 +49,7 @@ EXIT;
 Create a `.env` file in the project root directory:
 
 ```
-SECRET_KEY=your-secret-key
+SECRET_KEY=myrandomsecretkey12345
 DATABASE_URL=mysql+pymysql://root:<your-mysql-password>@localhost/gym_management
 ```
 
