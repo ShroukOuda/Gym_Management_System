@@ -1,24 +1,28 @@
-# Gym Management System
+# 🏋️‍♀️ Gym Management System
 
-A comprehensive web application for managing gym operations, including member management, trainer scheduling, equipment tracking, and more.
+A comprehensive Flask-based web application for managing gym operations, including member management, trainer scheduling, equipment tracking, and more.
 
-## Getting Started
+---
+
+## 📦 Getting Started
 
 Follow these instructions to set up and run the project on your local machine.
 
-### Prerequisites
+### ✅ Prerequisites
 
 - Python 3.6 or higher
-- MySQL server
+- MySQL Server
 - Git
 
-### Installation
+---
+
+### 🛠️ Installation
 
 1. **Clone the repository**
 
 ```bash
 git clone https://github.com/ShroukOuda/Gym_Management_System.git
-cd  Gym_Management_System
+cd Gym_Management_System
 ```
 
 2. **Install dependencies**
