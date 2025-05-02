@@ -62,10 +62,10 @@ Replace the password in the DATABASE_URL with your MySQL password.
 ```bash
 Flask create_tables
 ```
-``bash
+```bash
 Flask create_admin
 ```
-``bash
+```bash
 python app.py
 ```
 
