@@ -68,14 +68,19 @@ Open your web browser and navigate to:
 http://localhost:5000
 ```
 
-## Features
+## 🚀 Features
 
-- Multi-user role system (Manager, Secretary, Trainer)
-- Member management
-- Class scheduling
-- Equipment tracking
-- Package and subscription management
-- Reporting and analytics
+- 🔐 **User Authentication**: Secure login system for Admin, Trainer, Member, and Secretary roles.
+- 🏋️ **Class Management**: Add, update, and view fitness classes and assign trainers.
+- 🧍‍♂️ **Member Management**: Register new members, edit profiles, and track attendance.
+- 👨‍🏫 **Trainer Dashboard**: View assigned classes, manage class details, and member lists.
+- 🧑‍💼 **Secretary Dashboard**: Handle member registrations and support administrative tasks.
+- 🧾 **Attendance Tracking**: Record and display attendance for gym members.
+- 🏋️‍♀️ **Equipment Management**: Add and list available gym equipment.
+- 🌐 **Responsive Frontend**: Styled using CSS with organized templates and layout.
+- 📁 **Modular Codebase**: Clean separation of logic using Flask Blueprints (or ready for it), templates, and static files.
+- 🌱 **Environment Configuration**: Securely store sensitive data using a `.env` file.
+
 
 ## Project Structure
 
