@@ -80,8 +80,6 @@ http://localhost:5000
 ## Project Structure
 
 - `app.py`: Main application file
-- `models.py`: Database models
-- `routes/`: Route handlers for different user roles
 - `templates/`: HTML templates
 - `static/`: Static files (CSS, JavaScript, images)
 - `config.py`: Application configuration
