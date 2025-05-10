@@ -103,4 +103,4 @@ http://localhost:5000
 - SQLAlchemy: ORM for database operations
 - Werkzeug: Security and utilities
 - PyMySQL: MySQL database connector
-- Bootstrap: Frontend framework (optional)
+- Bootstrap: Frontend framework
